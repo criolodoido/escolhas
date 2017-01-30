@@ -1,0 +1,16 @@
+<table>
+  <thead><tr><th>Nome</th><th>Classificação</th></tr></thead>
+  <tbody>
+    {% regroup posts by name as grouped %}
+    {% for group in grouped %}
+    {% for obj in group.list %}
+    <tr>
+      {% if obj.tipos == "COMIDA" %}
+        <td>{{ obj.name }}</td>
+        <td>{{ obj.tipos }}</td>
+      {% endif %}
+    </tr>
+  {% endfor %}
+  {% endfor %}
+  </tbody>
+</table>

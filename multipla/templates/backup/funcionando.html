@@ -1,0 +1,12 @@
+<html>
+	{% for post in posts %}
+		{% if post.tipos == "COMIDA" %}
+			<div>
+				<p>{{ post.tipos }}</p>
+				<h1>{{ post.name }}</h1>
+			</div>
+		{% else %}
+			<p>NÃO</p>
+		{% endif %}
+	{% endfor %}
+</html>

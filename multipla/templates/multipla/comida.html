@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<table>
+  <thead><tr><th>Nome</th><th>Classificação</th></tr></thead>
+  <tbody>
+  	<link href="https://fonts.googleapis.com/css?family=Dekko&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/lindo.css' %}">
+    {% regroup posts by name as grouped %}
+    {% for group in grouped %}
+    {% for obj in group.list %}
+    <div class = "tabela">
+      <tr>
+        {% if obj.tipos == "COMIDA" %}
+        	<td>{{ obj.name }}</td>
+        	<td>{{ obj.tipos }}</td>
+        {% endif %}
+      </tr>
+    </div>
+  {% endfor %}
+  {% endfor %}
+  </tbody>
+</table>
