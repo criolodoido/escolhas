@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
+import dj_database_url
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -72,19 +72,7 @@ WSGI_APPLICATION = 'escolhas.wsgi.application'
 
 # Database
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'banco',
-        'USER': 'visus',
-        'PASSWORD': 'sentinela',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',#certificar de que esta correção funcionará
-    }
-}
-
-
+DATABASES = {'default': dj_database_url.config(default='postgres://visus:sentinela@localhost/banco')}
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
