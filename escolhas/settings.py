@@ -72,7 +72,7 @@ WSGI_APPLICATION = 'escolhas.wsgi.application'
 
 # Database
 
-DATABASES = {'default': dj_database_url.config(default='postgres://visus:sentinela@localhost/banco')}
+DATABASES = {'default': dj_database_url.config(default='postgres://usuario:senha@localhost/banco')}
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
